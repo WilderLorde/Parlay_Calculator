@@ -68,7 +68,8 @@ class Options:
 				to_win = round(at_least_moneyline * (wager / 100))
 				payout = round(to_win + wager, 2)
 				print(f"Wager: ${wager} Odds: {plus}{at_least_moneyline} To Win: ${to_win}")
-				print(f"Payout: ${payout}")
+				print(f"Potential Payout: ${payout}")
+				print("\n")
 			elif at_least_decimal <= 1.99:
 				at_least_moneyline = round(-100 / (at_least_decimal - 1))
 				print(f"Odds for At Least 1 Event to Occur Out of {num_picks} are: {at_least_moneyline}")
@@ -78,6 +79,7 @@ class Options:
 				payout = round(to_win + wager)
 				print(f"Wager: ${wager} Odds: {at_least_moneyline} To Win: ${to_win}")
 				print(f"Potential Payout: ${payout}")
+				print("\n")
 		elif options == "At Least 2":
 			"""P(at least two successes) = 1 - P(zero successes) - P(one success)"""
 			"""P(X=k) = nCk * pk * (1-p)n-k"""
@@ -140,6 +142,7 @@ class Options:
 				payout = round(to_win + wager, 2)
 				print(f"Wager: ${wager} Odds: {plus}{p2_moneyline} To Win: ${to_win}")
 				print(f"Payout: ${payout}")
+				print("\n")
 			elif p2_decimal <= 1.99:
 				p2_moneyline = round(-100 / (p2_decimal - 1))
 				print(f"Odds for At Least 2 Events to Occur Out of {num_events} are: {p2_moneyline}")
@@ -149,3 +152,4 @@ class Options:
 				payout = round(to_win + wager)
 				print(f"Wager: ${wager} Odds: {p2_moneyline} To Win: ${to_win}")
 				print(f"Potential Payout: {payout}")
+				print("\n")

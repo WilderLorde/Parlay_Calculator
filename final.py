@@ -1,6 +1,8 @@
 import math
 from equations import Options
-
+from art import logo
+# import colorama
+# from colorama import Fore
 
 plus = '+'
 betslip = []
@@ -9,11 +11,17 @@ prob_odds = []
 american_odds = []
 more_picks = True
 
-def prompt():
-	try:
-		num_events = int(input("How many legs are in your parlay?: "))
-	except ValueError:
-		print("Please enter a valid number.")
+
+"""HERE............."""
+print(logo)
+def parlay_calculator():
+	more_picks = True
+	while more_picks:
+		try:
+			num_events = int(input("How many legs are in your parlay?: "))
+			break
+		except ValueError:
+			print("Please enter a valid number.")
 	for i in range(num_events):
 		while True:
 			try:
@@ -39,7 +47,6 @@ def prompt():
 			decimal_odds.append(decimal_conversion)
 			prob_percent = (1 / decimal_conversion) * 100
 			prob_odds.append(prob_percent)
-			print(f"\nCurrent Betslip: {betslip}")
 		else:
 			more_picks = False
 	print(f"Final Betslip: {betslip}")
@@ -51,23 +58,33 @@ def prompt():
 	# print(usa_parlay_odds)
 	print(f"Your {num_events} Leg Parlay Odds are: {plus}{usa_parlay_odds}")
 	print("\n")
-	wager_or_more = input("Would you Like to Wager or See More Options?\nType 'w' to Wager or 'm' for More Options: ")
+	wager_or_more = input("Would you Like to Wager or See More Options?\n"
+	                      "Type 'w' to Wager or 'm' for More Options: ").lower()
 	print("\n")
 	if wager_or_more == "w":
 		wager = int(input("How Much Would you Like to Wager?: $"))
 		to_win = usa_parlay_odds * (wager / 100)
 		payout = to_win + wager
-		print(f"Wager: ${wager} Odds: {plus}{usa_parlay_odds} To Win: ${to_win}")
+		print(f"Wager: ${wager}, Odds: {plus}{usa_parlay_odds} To Win: ${to_win}")
 		print(f"Potential Payout: ${payout}")
+		print("\n")
+
 	else:
 		Options(decimal_odds, betslip, plus, num_events)
 
 
-def main():
-	start_prompt = true
-	while start_prompt:
-		prompt()
-		start_prompt = input('Want to do another? (y/n): ').lower().strip() == 'y'
+while input('Want to Make a Parlay? (y/n): ').lower().strip() == 'y':
+	print("\n")
+	parlay_calculator()
 
-if __name__ == "__main__":
-    main()
+
+
+
+
+
+
+
+
+
+
+
