@@ -253,7 +253,7 @@ class Options:
 					wager_threes = int(input("By 3s x4 Wager: $"))
 					total_risk_threes = wager_threes * 4
 					total_risk_threes_as_money = as_currency(total_risk_threes)
-					red_text_risk_threes_as_money = (Fore.RED + f'By 2s x6 Risk: {total_risk_threes_as_money}')
+					red_text_risk_threes_as_money = (Fore.RED + f'By 3s x4 Risk: {total_risk_threes_as_money}')
 					total_risk += total_risk_threes
 					max_win_threes = (threes_moneyline * total_risk_threes) / 100
 					max_win_threes_as_money = as_currency(max_win_threes)
@@ -267,7 +267,7 @@ class Options:
 					wager_threes = int(input("By 3s x4 Wager: $"))
 					total_risk_threes = wager_threes * 4
 					total_risk_threes_as_money = as_currency(total_risk_threes)
-					red_text_risk_threes_as_money = (Fore.RED + f'By 2s x6 Risk: {total_risk_threes_as_money}')
+					red_text_risk_threes_as_money = (Fore.RED + f'By 3s x4 Risk: {total_risk_threes_as_money}')
 					total_risk += total_risk_threes
 					max_win_threes = (total_risk_threes / threes_moneyline) * -100
 					max_win_threes_as_money = as_currency(max_win_threes)
@@ -285,7 +285,7 @@ class Options:
 					wager_parlay = int(input("4 Leg Parlay Wager: $"))
 					total_parlay_risk = wager_parlay * 1
 					total_parlay_risk_as_money = as_currency(total_parlay_risk)
-					red_text_risk_parlay_as_money = (Fore.RED + f'By 2s x6 Risk: {total_parlay_risk_as_money}')
+					red_text_risk_parlay_as_money = (Fore.RED + f'4 Leg Parlay Risk: {total_parlay_risk_as_money}')
 					total_risk += total_parlay_risk
 					to_win_parlay = round((parlay_moneyline / 100) * wager_parlay, 2)
 					to_win_parlay_as_money = as_currency(to_win_parlay)
@@ -299,7 +299,7 @@ class Options:
 					wager_parlay = int(input("4 Leg Parlay Wager: $"))
 					total_parlay_risk = wager_parlay * 1
 					total_parlay_risk_as_money = as_currency(total_parlay_risk)
-					red_text_risk_parlay_as_money = (Fore.RED + f'By 2s x6 Risk: {total_parlay_risk_as_money}')
+					red_text_risk_parlay_as_money = (Fore.RED + f'4 Leg Parlay Risk: {total_parlay_risk_as_money}')
 					total_risk += total_parlay_risk
 					to_win_parlay = (total_parlay_risk / parlay_moneyline) * -100
 					to_win_parlay_as_money = as_currency(to_win_parlay)
